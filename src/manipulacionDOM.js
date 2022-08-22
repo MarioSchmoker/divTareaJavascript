@@ -1,47 +1,50 @@
-let contador = 0;
-function contarClicks() {
-  contador++;
-  // console.log("Se realizaron", contador, "clicks");
-  document.getElementById("cuenta").innerHTML =
-    "Se realizaron " + contador + " clicks";
-}
-
-document.querySelector(".parrafoDom").innerHTML = "<h4> Agregado desde js";
-
+let body = document.querySelector("body");
 let imagen = document.querySelector("img");
 imagen.src =
   "https://loscormoranes.com/wp-content/uploads/2018/07/tierradelfuego.jpg";
+let boton = document.createElement("button");
+ocultarDiv();
 
-let btn = document.getElementById("btn-contar");
-btn.addEventListener("click", contarClicks);
-// ultima clase
+function ocultarDiv() {
+  boton.appendChild(document.createTextNode("Ocultar/Mostar Imagen"));
+  body.appendChild(boton);
+  boton.addEventListener("click", () => {
+    imagen.classList.toggle("alternar_img");
+  });
+}
+
 let caja = document.createElement("div");
-let body = document.querySelector("body");
 body.appendChild(caja);
 let lista = document.createElement("ul");
 let elemento = document.createElement("li");
-let texto = document.createTextNode("item 1");
-
+let texto = document.createTextNode("Tarea 1");
 elemento.appendChild(texto);
 lista.appendChild(elemento);
 caja.appendChild(lista);
 
-// ocultar y mostrar div
-let boton = document.createElement("button");
-boton.appendChild(document.createTextNode("Ocultar/Mostar Imagen"));
+elemento = document.createElement("li");
+texto = document.createTextNode("Tarea 2");
+elemento.appendChild(texto);
+lista.appendChild(elemento);
+
+elemento = document.createElement("li");
+texto = document.createTextNode("Tarea 3");
+elemento.appendChild(texto);
+lista.appendChild(elemento);
+let nuevaTarea = String;
+nuevaTarea = document.createElement("input");
+body.appendChild(nuevaTarea);
+nuevaTarea.appendChild(document.createTextNode("Nueva Tarea"));
+// nuevaTarea = document.getElementById(this.value);
+
+boton = document.createElement("button");
+boton.appendChild(document.createTextNode("Agregar tarea"));
 body.appendChild(boton);
 boton.addEventListener("click", () => {
-  // imagen.style.display = "none";
-  // boton.appendChild(document.createTextNode("Mostar Imagen"));
-  // imagen.classList.toggle("alternar_img");
-  imagen.classList.toggle("alternar_img");
+  elemento = document.createElement("li");
+  texto = document.createTextNode(nuevaTarea.value);
+  elemento.appendChild(texto);
+  lista.appendChild(elemento);
+  document.getElementsByTagName("input")[0].value = "";
+  console.log(texto);
 });
-// ejercicio 2 reutilizar //
-//  function cambiarClick() {
-//    if ( %2 === 0){
-
-//    }
-
-// function ocultar(elemento) {
-
-// }

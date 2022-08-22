@@ -4,7 +4,7 @@ body {
   align-items: center;
 }
 div {
-  margin: 20px;
+  margin: 30px;
 }
 img {
   width: 50em;
@@ -14,7 +14,8 @@ img {
 }
 
 button {
-  background-color: aquamarine;
-  border-radius: 3px;
-  font-size: 16px;
+  background-color: rgb(130, 204, 12);
+  border-radius: 4px;
+  font-size: 18px;
+  margin: 20px;
 }
